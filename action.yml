@@ -1,0 +1,15 @@
+name: 'Envato FTP Deploy'
+description: 'ZIP files and deploy on Envato FTP'
+inputs:
+  ENVATO_USERNAME:
+    description: 'Envato username'
+    required: true
+  ENVATO_PERSONAL_TOKEN:
+    description: 'Envato personal token https://help.author.envato.com/hc/en-us/articles/360000472603-How-to-get-an-API-Key'
+    required: true
+  ZIP_FILES:
+    description: 'ZIP files list to upload'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
