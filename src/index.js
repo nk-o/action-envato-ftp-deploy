@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import path from 'path';
-import ftp from 'basic-ftp';
+import { Client } from 'basic-ftp';
 import { paths } from './utils';
 
 // most @actions toolkit packages have async methods
@@ -18,7 +18,7 @@ async function run() {
             if ( files.length ) {
                 try {
                     await core.group( 'Uploading Files', async () => {
-                        const client = new ftp.Client();
+                        const client = new Client();
 
                         client.ftp.verbose = true;
 

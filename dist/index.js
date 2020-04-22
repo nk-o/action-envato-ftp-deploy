@@ -4602,7 +4602,6 @@ var external_path_default = /*#__PURE__*/__webpack_require__.n(external_path_);
 
 // EXTERNAL MODULE: ./node_modules/basic-ftp/dist/index.js
 var dist = __webpack_require__(728);
-var dist_default = /*#__PURE__*/__webpack_require__.n(dist);
 
 // EXTERNAL MODULE: ./node_modules/glob/glob.js
 var glob = __webpack_require__(402);
@@ -4643,7 +4642,7 @@ async function run() {
             if ( files.length ) {
                 try {
                     await Object(core.group)( 'Uploading Files', async () => {
-                        const client = new dist_default.a.Client();
+                        const client = new dist.Client();
 
                         client.ftp.verbose = true;
 
