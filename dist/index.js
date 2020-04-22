@@ -4660,12 +4660,11 @@ async function run() {
             const files = paths( ZIP_FILES_ARRAY );
 
             if ( files.length ) {
+                const client = new dist.Client();
+                client.ftp.verbose = true;
+
                 try {
                     await Object(core.group)( 'Uploading Files', async () => {
-                        const client = new dist.Client();
-
-                        client.ftp.verbose = true;
-
                         await client.access( {
                             host: SERVER,
                             user: ENVATO_USERNAME,
@@ -4677,12 +4676,13 @@ async function run() {
                             await client.uploadFrom( file, external_path_default().parse( file ).base );
                         }
                     } );
-                }
-                catch (error) {
+                } catch (error) {
                     console.error('⚠️ Failed to upload files');
                     Object(core.setFailed)(error.message);
                     throw error;
                 }
+
+                client.close();
             } else {
                 console.warn(`🤔 valid files not found.`);
             }
