@@ -8,7 +8,6 @@ Deploy your ZIP files to Envato FTP.
 
 * `ENVATO_USERNAME` - your Envato username
 * `ENVATO_PERSONAL_TOKEN` - personal token of Envato API <https://help.author.envato.com/hc/en-us/articles/360000472603-How-to-get-an-API-Key>
-* `ZIP_FILES` - list of ZIP files to upload
 
 [Secrets are set in your repository settings](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets). They cannot be viewed once stored.
 
