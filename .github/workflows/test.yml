@@ -1,10 +1,12 @@
 name: "test"
 
 on:
-  pull_request:
   push:
-    branches:
-      - master
+    tags:
+    - "v*"
+  pull_request:
+    tags:
+    - "v*"
 
 jobs:
   # test action works running from the graph

@@ -4637,6 +4637,7 @@ async function run() {
         const ZIP_FILES = Object(core.getInput)('ZIP_FILES');
 
         console.log(ZIP_FILES);
+        Object(core.setOutput)( 'ZIP_FILES', ZIP_FILES );
 
 
         // Upload ZIPs.
