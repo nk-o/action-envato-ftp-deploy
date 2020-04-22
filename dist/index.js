@@ -4673,9 +4673,9 @@ async function run() {
                             secure: true,
                         } );
 
-                        files.forEach( async ( file ) => {
+                        for ( const file of files ) {
                             await client.uploadFrom( file, external_path_default().parse( file ).base );
-                        } );
+                        }
                     } );
                 }
                 catch (error) {
