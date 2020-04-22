@@ -4633,11 +4633,23 @@ async function run() {
         const SERVER = 'ftp.marketplace.envato.com';
         const ENVATO_USERNAME = Object(core.getInput)('ENVATO_USERNAME');
         const ENVATO_PERSONAL_TOKEN = Object(core.getInput)('ENVATO_PERSONAL_TOKEN');
-        const ZIP_FILES = Object(core.getInput)('ZIP_FILES').split( '\n' );
+        const ZIP_FILES = Object(core.getInput)('ZIP_FILES');
+
+        if ( ! ENVATO_USERNAME ) {
+            Object(core.setFailed)('⚠️ ENVATO_USERNAME variable is required');
+        }
+        if ( ! ENVATO_PERSONAL_TOKEN ) {
+            Object(core.setFailed)('⚠️ ENVATO_PERSONAL_TOKEN variable is required');
+        }
+        if ( ! ZIP_FILES ) {
+            Object(core.setFailed)('⚠️ ZIP_FILES variable is required');
+        }
+
+        const ZIP_FILES_ARRAY = ZIP_FILES.split( '\n' );
 
         // Upload ZIPs.
-        if ( ZIP_FILES && ZIP_FILES.length ) {
-            const files = paths( ZIP_FILES );
+        if ( ZIP_FILES_ARRAY && ZIP_FILES_ARRAY.length ) {
+            const files = paths( ZIP_FILES_ARRAY );
 
             if ( files.length ) {
                 try {
@@ -4659,7 +4671,7 @@ async function run() {
                     } );
                 }
                 catch (error) {
-                    console.error("⚠️ Failed to upload files");
+                    console.error('⚠️ Failed to upload files');
                     Object(core.setFailed)(error.message);
                     throw error;
                 }
