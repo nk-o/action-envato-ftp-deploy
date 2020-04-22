@@ -11,6 +11,9 @@ async function run() {
         const ENVATO_PERSONAL_TOKEN = core.getInput('ENVATO_PERSONAL_TOKEN');
         const ZIP_FILES = core.getInput('ZIP_FILES');
 
+        console.log(ZIP_FILES);
+
+
         // Upload ZIPs.
         if ( ZIP_FILES ) {
             const files = paths( ZIP_FILES );
