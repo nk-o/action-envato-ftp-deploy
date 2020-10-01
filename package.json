@@ -1,6 +1,6 @@
 {
   "name": "action-envato-ftp-deploy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ZIP files and deploy on Envato FTP",
   "main": "src/index.js",
   "scripts": {
