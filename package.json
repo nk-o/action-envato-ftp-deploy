@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/nk-o/action-envato-ftp-deploy#readme",
   "dependencies": {
-    "@actions/core": "^1.2.3",
-    "basic-ftp": "^4.5.4",
+    "@actions/core": "^1.2.6",
+    "basic-ftp": "^4.6.2",
     "glob": "^7.1.6",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.22.1",
-    "eslint": "^6.8.0"
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.10.0"
   }
 }
